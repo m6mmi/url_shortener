@@ -7,9 +7,9 @@
     
 {% for field in urls %}
     <p id="url">
-        <a href="{{ request.build_absolute_uri }}{{ field.alias }}">{{ request.build_absolute_uri }}{{ field.alias }}</a>
+        &#11190<a href="{{ request.build_absolute_uri }}{{ field.alias }}">{{ request.build_absolute_uri }}{{ field.alias }}</a>
         <br>
-        <a href="{{ field.url }}">{{ field.url }}</a>
+        &#11185<a href="{{ field.url }}">{{ field.url }}</a>
     </p>
         
 {% endfor %}
