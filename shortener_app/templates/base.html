@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}URL Shortener{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>{% block h1 %}{{model_name}}{% endblock %}</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="{% url 'create' %}">Create short URL</a></li>
+            <li><a href="{% url 'url_list' %}">URL list</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Janek</p>
+    </footer>
+</body>
+</html>

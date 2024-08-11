@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Create URLs{% endblock %}
+{% block h1 %}Create URL{% endblock %}
+
+{% block content %}
+{% if request.GET.created_alias %}
+
+
+<div>
+    Shortcut added! The short url is:
+    {% url 'redirect' alias=request.GET.created_alias as alias %}
+    <a href="{{ alias }}">{{ alias }}</a>
+</div>
+{% endif %}
+<form method="post" class="url_input">
+    {% csrf_token %}
+    <table id="form">{{ form }}</table>
+    <input type="submit" value="Add alias" id="add-alias-button">
+</form>
+
+
+{% endblock %}

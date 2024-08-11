@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ model_name }}{% endblock %}
+
+
+{% block content %}
+    
+{% for field in urls %}
+    <p id="url">
+        <a href="{{ request.build_absolute_uri }}{{ field.alias }}">{{ request.build_absolute_uri }}{{ field.alias }}</a>
+        <br>
+        <a href="{{ field.url }}">{{ field.url }}</a>
+    </p>
+        
+{% endfor %}
+
+{% endblock %}
